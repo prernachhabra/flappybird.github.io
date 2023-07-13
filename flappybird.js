@@ -135,7 +135,7 @@ function placePipes(){
 }
 
 function moveBird(e) {
-    if(e.code == "Space" || e.code == "ArrowUp" || e.code == "keyX") {
+    if(e.code == "Space" || e.code == "ArrowUp" || e.code == "keyX"|| e.type === "click") {
         //jump
         velocityY = -6;
 
@@ -148,6 +148,8 @@ function moveBird(e) {
         }
     }
 }
+document.addEventListener("keydown", moveBird);
+document.addEventListener("click", moveBird);
 
 function detectCollision(a,b) {
     return a.x < b.x + b.width &&
